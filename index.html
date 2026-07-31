@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart AI Food Recognizer</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- TensorFlow.js aur Teachable Machine libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Smart AI Food Recognizer</h2>
+
+    <!-- Model URL Input -->
+    <div class="input-group">
+      <input type="text" id="model-url" placeholder="Teachable Machine Model URL Paste Karein...">
+      <button onclick="loadModel()">Load Model</button>
+    </div>
+
+    <!-- Image Upload Option -->
+    <div class="upload-section">
+      <label for="image-upload" class="upload-btn">📁 Upload Food Image</label>
+      <input type="file" id="image-upload" accept="image/*" onchange="previewAndPredict(event)">
+    </div>
+
+    <!-- Preview Area -->
+    <div class="preview-container">
+      <img id="image-preview" src="#" alt="Uploaded Food Preview" style="display: none;">
+    </div>
+
+    <!-- Prediction Results -->
+    <div class="results">
+      <h3>Prediction Result:</h3>
+      <p id="top-prediction">Waiting for image...</p>
+      <p id="confidence-level"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
